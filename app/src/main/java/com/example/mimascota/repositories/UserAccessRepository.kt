@@ -10,25 +10,23 @@ import javax.inject.Inject
 
 class UserAccessRepository @Inject constructor(
     private val apiService: CoreHomeApi
-){
-    fun postAccess():Single<MutableList<AllPets>>
-    {
+) {
+    fun postAccess(): Single<MutableList<AllPets>> {
         return apiService.getUserAccess()
             .map { allpets ->
                 allpets.toModel()
             }
     }
 
-    fun userAccess(email:String,password:String): Single<AccesResultModel>
-    {
+    fun userAccess(email: String, password: String): Single<AccesResultModel> {
         return apiService.userAccess(
             UserAccessResponce(
-            email= email,
-            password = password)
+                email = email,
+                password = password
+            )
         )
-            .map { UserAccesResponce->
-                UserAccesResponce.toModel()}
+            .map { UserAccesResponce ->
+                UserAccesResponce.toModel()
+            }
     }
-
-
 }

@@ -2,7 +2,6 @@ package com.example.mimascota.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mimascota.models.UserAccess
 import com.example.mimascota.models.UserAccessResult
 import com.example.mimascota.repositories.UserAccessRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,13 +11,12 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel
-class PetsViewModel@Inject constructor(
-    var UserAccessRepository: UserAccessRepository) : ViewModel()
-{
+class PetsViewModel @Inject constructor(
+    var UserAccessRepository: UserAccessRepository
+) : ViewModel() {
 
     // Ayuda a liberar los recursos cuando usamos programacion reactiva
     private val compositeDisposable = CompositeDisposable()
-
 
     val UserAccesList: MutableLiveData<UserAccessResult> by lazy {
         MutableLiveData<UserAccessResult>()
@@ -34,7 +32,7 @@ class PetsViewModel@Inject constructor(
                         list = listProds
                     )
                 )
-            },{
+            }, {
                 listRecipeBook.postValue(
                     RecipeBookResult(
                         susses = false
@@ -43,26 +41,27 @@ class PetsViewModel@Inject constructor(
             })
     }
 
-    fun userAcces(email:String,idUser:String,password:String)
-    {
+    fun userAcces(email: String, idUser: String, password: String) {
         compositeDisposable += recipeBookRepository.userAccess(
-            email = email,idUser=idUser,password = password)
+            email = email, idUser = idUser, password = password
+        )
             .subscribeOn(Schedulers.io())
             .subscribe(
-                {accesResultModel->
+                { accesResultModel ->
                     userAcces.postValue(accesResultModel)
                 },
-                { error->
-                    userAcces.postValue(AccesResultModel(
-                        code ="1",
-                        message = "error!",
-                    ))
-                })
+                { error ->
+                    userAcces.postValue(
+                        AccesResultModel(
+                            code = "1",
+                            message = "error!",
+                        )
+                    )
+                }
+            )
     }
 
-
-    override fun onCleared()
-    {
+    override fun onCleared() {
         compositeDisposable.clear()
         super.onCleared()
     }
