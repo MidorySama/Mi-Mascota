@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bkgPantalla"
+    tools:context=".views.add.AgrearMasFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/TvCerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar"
+        android:layout_marginTop="@dimen/tvGeneral"
+        android:layout_marginLeft="@dimen/tvGeneral"
+        android:textColor="@color/tvTitle"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvNombre"
+        android:textSize="@dimen/tvGeneral"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/TvAgregar"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="80dp"
+        android:text="Agregar Mascota"
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvGeneral"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/tvAgregarMascota"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/camara"
+        app:layout_constraintStart_toEndOf="@id/TvAgregar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="200dp"
+        android:text="Nombre: "
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvGeneral"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTipoMascota"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="260dp"
+        android:text="Tipo de Mascota"
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvGeneral"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:singleLine="false"
+        app:layout_constraintStart_toEndOf="@id/tvTipoMascota"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etTipoMascotas"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:singleLine="false"
+        app:layout_constraintStart_toEndOf="@id/tvTipoMascota"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etRaza"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:singleLine="false"
+        app:layout_constraintStart_toEndOf="@id/tvTipoMascota"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvDetalle"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="330dp"
+        android:text="Detalle :"
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvGeneral"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/etDetalle"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:layout_marginTop="450dp"
+        android:singleLine="false"
+        app:layout_constraintStart_toStartOf="@id/tvTipoMascota"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

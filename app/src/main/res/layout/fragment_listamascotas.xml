@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bkgPantalla"
+    tools:context=".views.listamascotas.recyclerFragment">
+
+
+    <ImageView
+        android:id="@+id/ImgMascota"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="65dp"
+        android:background="@color/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MiMascota"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@color/bkgPantalla"
+        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:lines="4"
+        android:text="@string/MI_MASCOTA"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/ImgMascota"
+        app:layout_constraintStart_toEndOf="@id/ImgMascota"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

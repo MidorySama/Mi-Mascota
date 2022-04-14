@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tvTitle">25dp</dimen>
+    <dimen name="tvGeneral">19dp</dimen>
+    <dimen name="edRegistro">290dp</dimen>
+    <dimen name="Wid_General">250dp</dimen>
+    <dimen name="Wid_Contraseña">210dp</dimen>
+    <dimen name="Wid_RepetContra">260dp</dimen>
+    <dimen name="marginTopImg">15dp</dimen>
+    <dimen name="tvIngresar">15dp</dimen>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:background="@color/bkgPantalla"
+    tools:context=".views.register.RegisterFragment">
+
+    <TextView
+        android:id="@+id/tvRegresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Regresar"
+        android:textSize="@dimen/tvGeneral"
+        android:textColor="@color/tvTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/RegistroUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="45dp"
+        android:width="@dimen/edRegistro"
+        android:text="REGISTRO USUARIO"
+        android:textAlignment="center"
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etNombre"
+        android:layout_width="@dimen/edRegistro"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="185dp"
+        android:hint="Nombre"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etApellido"
+        android:layout_width="@dimen/edRegistro"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="260dp"
+        android:hint="Apellido"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etemail"
+        android:layout_width="@dimen/edRegistro"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="330dp"
+        android:hint="Correo Electronico"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etPassword"
+        android:layout_width="@dimen/edRegistro"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:hint="Contraseña"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="@dimen/edRegistro"
+        android:id="@+id/etRepetPassword"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="495dp"
+        android:width="@dimen/edRegistro"
+        android:hint="Repetir Contraseña"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+
+    <TextView
+        android:id="@+id/tvGuardar"
+        android:layout_width="@dimen/Wid_General"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="600dp"
+        android:background="@color/bkgBtn"
+        android:text="@string/Registrar"
+        android:textAlignment="center"
+        android:textColor="@color/bkgPantalla"
+        android:textSize="@dimen/tvGeneral"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
