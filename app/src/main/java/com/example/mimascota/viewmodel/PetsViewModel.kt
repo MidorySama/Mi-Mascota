@@ -2,6 +2,7 @@ package com.example.mimascota.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.mimascota.models.AccesResultModel
 import com.example.mimascota.models.UserAccessResult
 import com.example.mimascota.repositories.UserAccessRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,12 +19,12 @@ class PetsViewModel @Inject constructor(
     // Ayuda a liberar los recursos cuando usamos programacion reactiva
     private val compositeDisposable = CompositeDisposable()
 
-    val UserAccesList: MutableLiveData<UserAccessResult> by lazy {
+    val userAccesList: MutableLiveData<UserAccessResult> by lazy {
         MutableLiveData<UserAccessResult>()
     }
 
     fun getUserAccess() {
-        compositeDisposable += UserAccessRepository.getUserAccess()
+        compositeDisposable += UserAccessRepository.userAccess()
             .subscribeOn(Schedulers.io())
             .subscribe({ listProds ->
                 UserAccesList.postValue(
@@ -65,4 +66,4 @@ class PetsViewModel @Inject constructor(
         compositeDisposable.clear()
         super.onCleared()
     }
-}
+}*/

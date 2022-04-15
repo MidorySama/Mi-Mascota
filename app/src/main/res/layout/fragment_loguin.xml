@@ -55,13 +55,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="165dp"
         android:singleLine="false"
-        app:layout_constraintStart_toStartOf="@id/etContraseña"
+        app:layout_constraintStart_toStartOf="@id/etPassword"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 
     <EditText
-        android:id="@+id/etContraseña"
+        android:id="@+id/etPassword"
         android:layout_width="@dimen/Wid_General"
         android:layout_height="wrap_content"
         android:layout_marginTop="275dp"
@@ -81,7 +81,7 @@
         android:textAlignment="center"
         android:textColor="@color/bkgPantalla"
         android:textSize="@dimen/tvGeneral"
-        app:layout_constraintStart_toStartOf="@id/etContraseña"
+        app:layout_constraintStart_toStartOf="@id/etPassword"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -107,7 +107,7 @@
         android:textAlignment="center"
         android:textColor="@color/tvTitle"
         android:textSize="@dimen/tvIngresar"
-        app:layout_constraintStart_toStartOf="@id/etContraseña"
+        app:layout_constraintStart_toStartOf="@id/etPassword"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 

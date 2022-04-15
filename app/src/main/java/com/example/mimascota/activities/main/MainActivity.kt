@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
 
     fun changeScreenProccess(typeScreen: Screen) {
         when (typeScreen) {
-            /*     Screen.MenuFragment->{
-                     openMenuFragment()
-                 }*/
             Screen.LoguinFragment -> {
                 openLoguinFragment()
             }
