@@ -19,6 +19,10 @@ class PetsViewModel @Inject constructor(
     // Ayuda a liberar los recursos cuando usamos programacion reactiva
     private val compositeDisposable = CompositeDisposable()
 
+    val userAccess: MutableLiveData<AccesResultModel> by lazy {
+        MutableLiveData<AccesResultModel>()
+    }
+
     val userAccesList: MutableLiveData<UserAccessResult> by lazy {
         MutableLiveData<UserAccessResult>()
     }
@@ -42,7 +46,7 @@ class PetsViewModel @Inject constructor(
             })
     }
 
-   /* fun userAcces(email: String, idUser: String, password: String) {
+    fun userAccess(email: String, idUser: String, password: String) {
         compositeDisposable += recipeBookRepository.userAccess(
             email = email, idUser = idUser, password = password
         )
@@ -60,10 +64,10 @@ class PetsViewModel @Inject constructor(
                     )
                 }
             )
-    }*/
 
-  /*  override fun onCleared() {
-        compositeDisposable.clear()
-        super.onCleared()
+        override fun onCleared() {
+            compositeDisposable.clear()
+            super.onCleared()
+        }
     }
-}*/
+}

@@ -47,10 +47,12 @@ class LoguinFragment : Fragment() {
         }
 
         binding?.tvEntrar?.setOnClickListener {
-            binding?.etUsuario?.text.toString()
-            binding?.etPassword?.text.toString()
-            (activity as MainActivity)
-                .changeScreenProccess(Screen.ListaMascotasFragment)
+
+            userValid(
+                binding?.etUsuario?.text.toString(),
+                binding?.etPassword?.text.toString(),)
+                    (activity as MainActivity)
+                    .changeScreenProccess(Screen.ListaMascotasFragment)
         }
 
         binding?.tvIngresarInvi?.setOnClickListener {
@@ -63,6 +65,8 @@ class LoguinFragment : Fragment() {
                 .changeScreenProccess(Screen.RegisterFragment)
         }
         initLoginObserver()
+        // initRecycler()
+
     }
 
     // este es mi callback
@@ -77,11 +81,11 @@ class LoguinFragment : Fragment() {
     }
 
     private fun initLoginObserver() {
-        modelUserAccess.userAccesList.observe(this,userAccess)
+        modelUserAccess.userAccess.observe(this, userAccess)
     }
 
-    fun userAccess(email: String, pasword: String) {
-        modelUserAccess.userAcces(email, pasword)
+    fun userValid(email:String, Password:String) {
+        modelUserAccess.userAccess(email, Password)
     }
 
     companion object {
