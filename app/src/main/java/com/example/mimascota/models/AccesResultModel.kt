@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class AccesResultModel(
-    var code: String ="",
-    var message: String="",
-): Parcelable {}
+    var code: String = "",
+    var message: String = "",
+) : Parcelable

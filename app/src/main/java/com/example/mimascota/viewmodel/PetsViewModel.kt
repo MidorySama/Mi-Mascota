@@ -2,6 +2,7 @@ package com.example.mimascota.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.mimascota.models.AccesResultModel
 import com.example.mimascota.models.UserAccessResult
 import com.example.mimascota.repositories.UserAccessRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,15 +19,15 @@ class PetsViewModel @Inject constructor(
     // Ayuda a liberar los recursos cuando usamos programacion reactiva
     private val compositeDisposable = CompositeDisposable()
 
-    val UserAccesList: MutableLiveData<UserAccessResult> by lazy {
+    val userAccesList: MutableLiveData<UserAccessResult> by lazy {
         MutableLiveData<UserAccessResult>()
     }
 
     fun getUserAccess() {
-        compositeDisposable += UserAccessRepository.getUserAccess()
+        compositeDisposable += UserAccessRepository.userAccess()
             .subscribeOn(Schedulers.io())
             .subscribe({ listProds ->
-                UserAccesList.postValue(
+                userAccesList.postValue(
                     UserAccessResult(
                         susses = true,
                         list = listProds
@@ -41,14 +42,14 @@ class PetsViewModel @Inject constructor(
             })
     }
 
-    fun userAcces(email: String, idUser: String, password: String) {
+   /* fun userAcces(email: String, idUser: String, password: String) {
         compositeDisposable += recipeBookRepository.userAccess(
             email = email, idUser = idUser, password = password
         )
             .subscribeOn(Schedulers.io())
             .subscribe(
                 { accesResultModel ->
-                    userAcces.postValue(accesResultModel)
+                    userAccess.postValue(accesResultModel)
                 },
                 { error ->
                     userAcces.postValue(
@@ -59,10 +60,10 @@ class PetsViewModel @Inject constructor(
                     )
                 }
             )
-    }
+    }*/
 
-    override fun onCleared() {
+  /*  override fun onCleared() {
         compositeDisposable.clear()
         super.onCleared()
     }
-}
+}*/

@@ -1,6 +1,6 @@
 package com.example.mimascota.models
 
-class AccesResult(
+class UserAccesResult(
     var susses: Boolean = false,
     var list: MutableList<UserAccess> = mutableListOf()
 )
