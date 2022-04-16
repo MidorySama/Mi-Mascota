@@ -1,17 +1,16 @@
 package com.example.mimascota.repositories
 
 import com.example.mimascota.api.CoreHomeApi
-import com.example.mimascota.mapping.toModel
 import com.example.mimascota.models.AccesResultModel
 import com.example.mimascota.models.AllPets
 import com.example.mimascota.models.UserAccesRequest
-import com.example.mimascota.models.UserAccessResponce
 import io.reactivex.Single
 import javax.inject.Inject
 
 class UserAccessRepository @Inject constructor(
     private val apiService: CoreHomeApi
-)
+) {
+
     fun postAccess(): Single<MutableList<AllPets>> {
         return apiService.userAccess()
             .map { allPets ->

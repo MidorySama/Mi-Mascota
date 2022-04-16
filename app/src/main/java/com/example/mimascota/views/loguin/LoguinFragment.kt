@@ -14,12 +14,13 @@ import com.example.mimascota.databinding.FragmentLoguinBinding
 import com.example.mimascota.models.AccesResultModel
 import com.example.mimascota.models.Screen
 import com.example.mimascota.viewmodel.PetsViewModel
+/*import com.example.mimascota.viewmodel.PetsViewModel*/
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoguinFragment : Fragment() {
     var binding: FragmentLoguinBinding? = null
-    private val modelUserAcces: PetsViewModel by viewModels()
+    private val modelUserAccess: PetsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +41,6 @@ class LoguinFragment : Fragment() {
 
     private fun initListener() {
 
-        /*    binding?.tvSalir?.setOnClickListener{
-                (activity as MainActivity)
-                    .changeScreenProccess(Screen.LoguinFragment)
-            }*/
-
         binding?.etUsuario?.setOnClickListener {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.ListaMascotasFragment)
@@ -56,10 +52,6 @@ class LoguinFragment : Fragment() {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.ListaMascotasFragment)
         }
-        /* binding?.tvEntrar?.setOnClickListener {
-
-             (activity as MainActivity).changeScreenProccess(Screen.ListaMascotasFragment)
-         }*/
 
         binding?.tvIngresarInvi?.setOnClickListener {
             (activity as MainActivity)
@@ -76,15 +68,20 @@ class LoguinFragment : Fragment() {
     // este es mi callback
     private val userAccess = Observer<AccesResultModel> { accesResultModel ->
         if (accesResultModel.code == "0") {
-            (activity as MainActivity)// Asi se hace el responce redirect en el fragment
+            (activity as MainActivity) // Asi se hace el responce redirect en el fragment
                 .changeScreenProccess(Screen.ListaMascotasFragment)
         } else {
-            Toast.makeText(requireContext(), "Incorrect user or password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Incorrect user or password", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
     private fun initLoginObserver() {
-        modelUserAcces.userAccesList.observe(this,userAccess)
+        modelUserAccess.userAccesList.observe(this,userAccess)
+    }
+
+    fun userAccess(email: String, pasword: String) {
+        modelUserAccess.userAcces(email, pasword)
     }
 
     companion object {

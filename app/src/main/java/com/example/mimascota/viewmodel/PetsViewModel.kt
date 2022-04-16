@@ -27,7 +27,7 @@ class PetsViewModel @Inject constructor(
         compositeDisposable += UserAccessRepository.userAccess()
             .subscribeOn(Schedulers.io())
             .subscribe({ listProds ->
-                UserAccesList.postValue(
+                userAccesList.postValue(
                     UserAccessResult(
                         susses = true,
                         list = listProds
@@ -42,14 +42,14 @@ class PetsViewModel @Inject constructor(
             })
     }
 
-    fun userAcces(email: String, idUser: String, password: String) {
+   /* fun userAcces(email: String, idUser: String, password: String) {
         compositeDisposable += recipeBookRepository.userAccess(
             email = email, idUser = idUser, password = password
         )
             .subscribeOn(Schedulers.io())
             .subscribe(
                 { accesResultModel ->
-                    userAcces.postValue(accesResultModel)
+                    userAccess.postValue(accesResultModel)
                 },
                 { error ->
                     userAcces.postValue(
@@ -60,9 +60,9 @@ class PetsViewModel @Inject constructor(
                     )
                 }
             )
-    }
+    }*/
 
-    override fun onCleared() {
+  /*  override fun onCleared() {
         compositeDisposable.clear()
         super.onCleared()
     }
