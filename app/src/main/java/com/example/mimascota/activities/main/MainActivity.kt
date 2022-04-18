@@ -7,15 +7,15 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.mimascota.R
 import com.example.mimascota.databinding.ActivityMainBinding
 import com.example.mimascota.models.Screen
-import com.example.mimascota.views.register.RegisterFragment
 import com.example.mimascota.views.invitado.InvitadoFragment
 import com.example.mimascota.views.loguin.LoguinFragment
+import com.example.mimascota.views.register.RegisterFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    var binding:ActivityMainBinding? = null
+    var binding: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,31 +31,30 @@ class MainActivity : AppCompatActivity() {
         cam.commit()
     }
 
-    fun changeScreenProccess(typeScreen: Screen){
-        when(typeScreen){
-       /*     Screen.MenuFragment->{
-                openMenuFragment()
-            }*/
-            Screen.LoguinFragment->{
-                openLoguinFragment()}
-            Screen.RegisterFragment-> {
-                openRegisterFragment()}
-            Screen.InvitadoFragment->{
-                openInvitadoFragment()}
-           // Screen.Salir->{finish()}
+    fun changeScreenProccess(typeScreen: Screen) {
+        when (typeScreen) {
+            Screen.LoguinFragment -> {
+                openLoguinFragment()
+            }
+            Screen.RegisterFragment -> {
+                openRegisterFragment()
+            }
+            Screen.InvitadoFragment -> {
+                openInvitadoFragment()
+            }
+            // Screen.Salir->{finish()}
         }
     }
 
-    fun openLoguinFragment()
-    {
+    fun openLoguinFragment() {
         changeFragment(LoguinFragment.newInstance())
     }
-    fun openRegisterFragment()
-    {
+
+    fun openRegisterFragment() {
         changeFragment(RegisterFragment.newInstance())
     }
-    fun openInvitadoFragment()
-    {
+
+    fun openInvitadoFragment() {
         changeFragment(InvitadoFragment.newInstance())
     }
 
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         @JvmStatic
         fun newInstance() =
             LoguinFragment().apply {
-                arguments = Bundle().apply {   }
+                arguments = Bundle().apply { }
             }
     }
 
@@ -71,5 +70,4 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         binding = null
     }
-
 }

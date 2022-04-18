@@ -4,5 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class UserAccess ( var email: String = "",  var password: String ="",
-                  ): Parcelable
+class UserAccess(
+    var email: String = "",
+    var password: String = "",
+) : Parcelable
