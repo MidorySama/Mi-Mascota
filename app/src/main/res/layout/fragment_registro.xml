@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -58,34 +57,34 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout_Apellido"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
         android:hint="Apellido"
         android:textColorHint="@color/tvTitle"
         app:boxStrokeColor="#FF3700B3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etApellido"
-            android:textColor="@color/tvTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvTitle" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_layout_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
         android:hint="Correo electrónico"
         android:textColorHint="@color/tvTitle"
         app:boxStrokeColor="#FF3700B3"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -136,7 +135,7 @@
             android:layout_height="wrap_content"
             android:password="true"
             android:textColor="@color/tvTitle"
-            app:boxStrokeColor="#FF3700B3"/>
+            app:boxStrokeColor="#FF3700B3" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
