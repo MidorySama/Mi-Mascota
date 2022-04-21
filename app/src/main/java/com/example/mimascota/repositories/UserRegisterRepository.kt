@@ -7,12 +7,12 @@ import com.example.mimascota.models.UserRegisterRequest
 import io.reactivex.Single
 import javax.inject.Inject
 
-class UserRegisterRepository @Inject constructor (
+class UserRegisterRepository @Inject constructor(
     private val apiService: CoreHomeApi
-    ) {
+) {
 
-    fun  userRegister( email:String,name: String,lastName:String,password:String):
-            Single<AccesResultModel> {
+    fun userRegister(email: String, name: String, lastName: String, password: String):
+        Single<AccesResultModel> {
         return apiService.userRegister(
             userRegister = UserRegisterRequest(
                 email = email,
@@ -21,9 +21,6 @@ class UserRegisterRepository @Inject constructor (
                 password = password
             )
         )
-            .map {userRegister-> userRegister.toModel ()  }
+            .map { userRegister -> userRegister.toModel() }
     }
-
-
-
 }

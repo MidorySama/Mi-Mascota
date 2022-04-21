@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Regresar"
-        android:textSize="@dimen/tvGeneral"
         android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvRegresar"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -34,66 +34,110 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etNombre"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_Nombre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="160dp"
         android:hint="Nombre"
-        android:textColor="@color/black"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
+        app:counterTextColor="@color/tvTitle"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvTitle" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etApellido"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_Apellido"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="240dp"
         android:hint="Apellido"
-        android:textColor="@color/black"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvTitle" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etemail"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="330dp"
-        android:hint="Correo Electronico"
-        android:textColor="@color/black"
+        android:layout_marginTop="320dp"
+        android:hint="Correo electrónico"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvTitle" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etPassword"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_Password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="400dp"
         android:hint="Contraseña"
-        android:textColor="@color/black"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:textColor="@color/tvTitle" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_RepetPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/edRegistro"
-        android:id="@+id/etRepetPassword"
         android:layout_height="wrap_content"
-        android:layout_marginTop="495dp"
-        android:width="@dimen/edRegistro"
-        android:hint="Repetir Contraseña"
-        android:textColor="@color/black"
+        android:layout_marginTop="480dp"
+        android:hint=" Repetir Contraseña"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
         app:layout_constraintStart_toStartOf="@id/RegistroUsuario"
-        app:layout_constraintTop_toTopOf="parent"  />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRepetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:textColor="@color/tvTitle"
+            app:boxStrokeColor="#FF3700B3" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
