@@ -24,7 +24,7 @@ object RetrofitModule {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         httpClient = OkHttpClient.Builder()
-            .addInterceptor(interceptor) //.addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
+            .addInterceptor(interceptor) // .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
             .connectTimeout(100, TimeUnit.SECONDS)
             .readTimeout(100, TimeUnit.SECONDS)
             .addNetworkInterceptor { chain ->
@@ -35,7 +35,6 @@ object RetrofitModule {
             }.build()
     }
 
-
     @Provides
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
@@ -45,10 +44,8 @@ object RetrofitModule {
             .client(httpClient)
             .build()
 
-
     @Provides
     fun provideCoreHomeApi(retrofit: Retrofit): CoreHomeApi {
         return retrofit.create(CoreHomeApi::class.java)
     }
-
 }

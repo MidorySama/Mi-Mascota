@@ -7,9 +7,11 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RepositoryModule::class,
-    RetrofitModule::class,
-    UserRegisterModule::class])
-
-interface MainComponent {
-}
+@Component(
+    modules = [
+        RepositoryModule::class,
+        RetrofitModule::class,
+        UserRegisterModule::class
+    ]
+)
+interface MainComponent

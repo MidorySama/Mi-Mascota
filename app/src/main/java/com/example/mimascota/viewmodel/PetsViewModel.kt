@@ -23,7 +23,7 @@ class PetsViewModel @Inject constructor(
         MutableLiveData<UserAccessResult>()
     }
 
-    fun getUserAccess() {
+   /* fun getUserAccess() {
         compositeDisposable += UserAccessRepository.userAccess()
             .subscribeOn(Schedulers.io())
             .subscribe({ listProds ->
@@ -40,7 +40,8 @@ class PetsViewModel @Inject constructor(
                     )
                 )
             })
-    }
+    }*/
+}
 
    /* fun userAcces(email: String, idUser: String, password: String) {
         compositeDisposable += recipeBookRepository.userAccess(

@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mimascota.R
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.ActivitySplashBinding
-import com.example.mimascota.views.loguin.LoguinFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,7 +27,6 @@ class SplashActivity : AppCompatActivity() {
 
         binding.animationStartLottie.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(animation: Animator?) {
-
             }
 
             override fun onAnimationEnd(animation: Animator?) {
@@ -36,11 +34,9 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationCancel(animation: Animator?) {
-
             }
 
             override fun onAnimationRepeat(animation: Animator?) {
-
             }
         })
 
@@ -51,5 +47,4 @@ class SplashActivity : AppCompatActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
-
 }

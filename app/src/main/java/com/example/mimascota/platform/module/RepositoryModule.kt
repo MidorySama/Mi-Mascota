@@ -9,9 +9,8 @@ import dagger.hilt.android.components.ActivityComponent
 
 @Module
 @InstallIn(ActivityComponent::class)
-class RepositoryModule
-{
+class RepositoryModule {
     @Provides
     fun productRepositoryProvider(apiService: CoreHomeApi):
-            UserRegisterRepository = UserRegisterRepository(apiService)
+        UserRegisterRepository = UserRegisterRepository(apiService)
 }

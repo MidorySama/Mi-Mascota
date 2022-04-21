@@ -62,7 +62,7 @@ class LoguinFragment : Fragment() {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.RegisterFragment)
         }
-        initLoginObserver()
+        //initLoginObserver()
     }
 
     // este es mi callback
@@ -75,14 +75,14 @@ class LoguinFragment : Fragment() {
                 .show()
         }
     }
-
+/*
     private fun initLoginObserver() {
         modelUserAccess.userAccesList.observe(this,userAccess)
     }
 
     fun userAccess(email: String, pasword: String) {
-        modelUserAccess.userAcces(email, pasword)
-    }
+       modelUserAccess.userAcces(email, pasword)
+    }*/
 
     companion object {
 
