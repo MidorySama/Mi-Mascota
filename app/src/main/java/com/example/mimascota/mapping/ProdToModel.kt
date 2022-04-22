@@ -1,16 +1,15 @@
 package com.example.mimascota.mapping
 
-/*
-import com.example.mimascota.models.AccessResponce
+import com.example.mimascota.models.AccessResponse
 import com.example.mimascota.models.AllPets
 
-internal fun AccessResponce.toModel(): MutableList<AllPets> {
-  val allList: MutableList<AllPets> = mutableListOf()
+internal fun AccessResponse.toModel(): MutableList<AllPets> {
+    val allList: MutableList<AllPets> = mutableListOf()
 
-    AccessResponce.map { list ->
+    allList.map { list ->
         allList.add(
             AllPets(
-                idPet = list.id,
+                id = list.id,
                 name = list.name,
                 type = list.type,
                 raza = list.raza,
@@ -21,4 +20,4 @@ internal fun AccessResponce.toModel(): MutableList<AllPets> {
     }
 
     return allList
-}*/
+}

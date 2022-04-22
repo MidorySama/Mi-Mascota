@@ -1,6 +1,6 @@
 package com.example.mimascota.api
 
-import com.example.mimascota.models.AccessResponce
+import com.example.mimascota.models.AccessResponse
 import com.example.mimascota.models.UserAccesRequest
 import com.example.mimascota.models.UserRegisterRequest
 import com.example.mimascota.models.UserRegisterResponse
@@ -14,7 +14,7 @@ interface CoreHomeApi {
 
     @GET("/pets")
     @Headers("Content-Type: application/json ")
-    fun getUserAccess(): Single<UserRegisterResponse>
+    fun getUserAccess(): Single<AccessResponse>
 
     @POST("/register_user_pet")
     @Headers("Content-Type: application/json")
@@ -22,5 +22,5 @@ interface CoreHomeApi {
 
     @POST("/access_pet")
     @Headers("Content-Type: application/json ")
-    fun userAccess(@Body userRequest: UserAccesRequest): Single<AccessResponce>
+    fun userAccess(@Body userRequest: UserAccesRequest): Single<AccessResponse>
 }

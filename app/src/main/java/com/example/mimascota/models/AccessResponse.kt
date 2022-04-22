@@ -2,7 +2,7 @@ package com.example.mimascota.models
 
 import com.google.gson.annotations.SerializedName
 
-data class AccessResponce(
+data class AccessResponse(
     @SerializedName("result")
-    val requestUserAccess: UserAccessResult = UserAccessResult()
+    val requestUserAccess: MutableList<UserRegisterRequest> = mutableListOf()
 )

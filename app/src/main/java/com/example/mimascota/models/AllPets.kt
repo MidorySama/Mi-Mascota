@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class AllPets(
-    var idPet: String = "",
+    var id: String = "",
     var name: String = "",
     var type: String = "",
     var raza: String = "",
