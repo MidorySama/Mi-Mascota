@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class UserRegister(
+ class UserRegister(
     var name: String = "",
     var lastName: String = "",
     var email: String = "",
