@@ -1,6 +1,6 @@
 package com.example.mimascota.api
 
-import ManyAccessResult
+import AccessResult
 import com.example.mimascota.models.AccessResponse
 import com.example.mimascota.models.UserAccesRequest
 import com.example.mimascota.models.UserAccessResponse
@@ -15,7 +15,7 @@ interface CoreHomeApi {
 
     @GET("/pets")
     @Headers("Content-Type: application/json ")
-    fun getUserAccess(): Single<ManyAccessResult>
+    fun getUserAccess(): Single<AccessResult>
 
     @POST("/register_user_pet")
     @Headers("Content-Type: application/json")

@@ -1,9 +1,9 @@
 package com.example.mimascota.mapping
 
-import ManyAccessResult
+import AccessResult
 import com.example.mimascota.models.ListAllPets
 
-internal fun ManyAccessResult.toModel(): MutableList<ListAllPets> {
+internal fun AccessResult.toModel(): MutableList<ListAllPets> {
     val listAllList: MutableList<ListAllPets> = mutableListOf()
 
     requestUserAccess.map { list ->

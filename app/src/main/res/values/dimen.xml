@@ -7,7 +7,9 @@
     <dimen name="Wid_General">250dp</dimen>
     <dimen name="Wid_Contraseña">210dp</dimen>
     <dimen name="Wid_RepetContra">260dp</dimen>
+    <dimen name="modal_height">750dp</dimen>
     <dimen name="marginTopImg">15dp</dimen>
     <dimen name="tvIngresar">15dp</dimen>
     <dimen name="tvRegresar">15dp</dimen>
+    <dimen name="item_Mascotas_height">150dp</dimen>
 </resources>

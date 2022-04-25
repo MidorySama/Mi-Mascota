@@ -1,12 +1,20 @@
 package com.example.mimascota.activities.main
 
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.Observer
 import com.example.mimascota.R
 import com.example.mimascota.databinding.ActivityMainBinding
+import com.example.mimascota.models.ListAllPets
 import com.example.mimascota.models.Screen
+import com.example.mimascota.models.UserAccesResult
+import com.example.mimascota.viewmodel.LoginViewModel
+import com.example.mimascota.views.adapter.LoginAdapter
+import com.example.mimascota.views.component.LoginDetBottomSheet
 import com.example.mimascota.views.invitado.InvitadoFragment
 import com.example.mimascota.views.loguin.LoguinFragment
 import com.example.mimascota.views.register.RegisterFragment
@@ -14,8 +22,22 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
     var binding: ActivityMainBinding? = null
+    private val modelUserAcces: LoginViewModel by viewModels()
+
+    private var userLoginObserver = Observer<UserAccesResult> { userLogin ->
+        if (userLogin.susses) {
+            userLogin.list?.let {
+                val adapter = LoginAdapter(
+                    it,
+                    onItemClickListener,
+                    applicationContext
+                )
+                binding?.recyclerView?.adapter = adapter
+                adapter.notifyDataSetChanged()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +46,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding?.root)
         changeScreenProccess(Screen.LoguinFragment)
     }
+
+    private var onItemClickListener: ((listAll: ListAllPets) -> Unit) = { list ->
+        Toast.makeText(this, "Macota:" + list.name, Toast.LENGTH_SHORT).show()
+        LoginDetBottomSheet.newInstance(
+            list.name,
+            list.type,
+            list.raza,
+            list.obs,
+            list.url_image
+        )
+            .show(supportFragmentManager, "")
+    }
+
+    /*  private fun initRecycler() {
+          val linearLayoutManager = LinearLayoutManager(this)
+          binding?.recyclerView?.apply {
+              layoutManager = linearLayoutManager
+              isNestedScrollingEnabled = false
+              setHasFixedSize(true)
+              // itemAnimator = DefaultItemAnimator()
+          }
+      }*/
 
     fun changeFragment(fragment: Fragment) {
         val cam: FragmentTransaction = supportFragmentManager.beginTransaction()
@@ -44,6 +88,14 @@ class MainActivity : AppCompatActivity() {
             }
             // Screen.Salir->{finish()}
         }
+    }
+
+    private fun initLoginObserver() {
+        modelUserAcces.userAcces.observe(this, userLoginObserver)
+    }
+
+    fun userAccess(email: String, idUser: String, pasword: String) {
+        modelUserAcces.userAccess(email, idUser, pasword)
     }
 
     fun openLoguinFragment() {
