@@ -5,8 +5,9 @@
     android:id="@+id/fragment_detalle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.detalle.DetalleMascotaFragment"
-<Toolbar
+    tools:context=".views.detalle.DetalleMascotaFragment">
+
+    <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,9 +34,9 @@
 
     <ImageView
         android:id="@+id/ImgDetalle"
+        style="@style/TextAppearance.AppCompat.Display1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        style="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
         tools:ignore="MissingConstraints" />
 
@@ -43,11 +44,13 @@
         android:id="@+id/tvNombre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/tvGeneral"
+        android:layout_marginStart="19dp"
         android:layout_marginTop="220dp"
-        android:text="NOmbre Mascota:"
+        android:layout_marginEnd="19dp"
+        android:text="Nombre Mascota:"
         android:textColor="@color/tvTitle"
         android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ImgDetalle"
         app:layout_constraintTop_toTopOf="parent" />
 

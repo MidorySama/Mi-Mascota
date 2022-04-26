@@ -52,19 +52,19 @@ class LoginDetBottomSheet(
             .centerCrop()
         //  .into(binding!!.imgMascota)
 
-       /* binding?.tvRegresar?.setOnClickListener {
-            dismiss()
-        }*/
+        /* binding?.tvRegresar?.setOnClickListener {
+             dismiss()
+         }*/
 
-        //return binding?.root
+        // return binding?.root
     }
 
-   /* private fun configBottomSheet() {
-        binding?.root?.background = ContextCompat.getDrawable(
-            requireContext(),
-            R.drawable.bg_bottom_sheet
-        )
-    }*/
+    /* private fun configBottomSheet() {
+         binding?.root?.background = ContextCompat.getDrawable(
+             requireContext(),
+             R.drawable.bg_bottom_sheet
+         )
+     }*/
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -91,11 +91,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLoginObserver() {
-        modelUserAcces.userAcces.observe(this, userLoginObserver)
+        modelUserAcces.userAccess.observe(this, userLoginObserver)
     }
 
-    fun userAccess(email: String, idUser: String, pasword: String) {
-        modelUserAcces.userAccess(email, idUser, pasword)
+    fun userAccess(email: String,pasword: String) {
+        modelUserAcces.userAccess(email, pasword)
     }
 
     fun openLoguinFragment() {
@@ -123,3 +123,5 @@ class MainActivity : AppCompatActivity() {
         binding = null
     }
 }
+
+
