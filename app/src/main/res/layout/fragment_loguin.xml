@@ -8,80 +8,71 @@
     android:background="@color/bkgPantalla" >
 
 
-        <TextView
-            android:id="@+id/tvSalir"
-            android:layout_width="60dp"
+    <TextView
+        android:id="@+id/tvSalir"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/tvGeneral"
+        android:background="@color/bkgPantalla"
+        android:text="Salir"
+        android:textColor="@color/tvTitle"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_Nombre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="@dimen/edRegistro"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:hint="Usuario"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
+        app:counterTextColor="@color/tvTitle"
+        app:layout_constraintStart_toEndOf="@id/tvSalir"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsuario"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salir"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:textColor="@color/tvTitle"
-            android:background="@color/bkgPantalla"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="@dimen/tvGeneral"
-            app:layout_constraintStart_toStartOf="@id/tvUsuario"
-            tools:ignore="MissingConstraints" />
+            android:textColor="@color/tvTitle" />
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/tvUsuario"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_Password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="180dp"
-        android:text="Usuario:"
-        android:textColor="@color/tvTitle"
-        android:textSize="@dimen/tvGeneral"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="300dp"
+        android:hint="Apellido"
+        android:textColorHint="@color/tvTitle"
+        app:boxStrokeColor="#FF3700B3"
+        app:layout_constraintStart_toEndOf="@id/tvSalir"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvContraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="290dp"
-        android:text="Contraseña:"
-        android:textColor="@color/tvTitle"
-        android:textSize="@dimen/tvGeneral"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tvTitle" />
 
-
-    <EditText
-        android:id="@+id/etUsuario"
-        android:layout_width="@dimen/Wid_General"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
-        android:singleLine="false"
-        app:layout_constraintStart_toStartOf="@id/etPassword"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="@dimen/Wid_General"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="275dp"
-        android:singleLine="false"
-        app:layout_constraintStart_toEndOf="@id/tvContraseña"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tvEntrar"
-        android:layout_width="@dimen/Wid_General"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
-        android:background="@color/bkgBtn"
-        android:text="@string/entrar"
+        android:layout_marginTop="400dp"
+        android:text="Entrar"
         android:textAlignment="center"
-        android:textColor="@color/bkgPantalla"
-        android:textSize="@dimen/tvGeneral"
-        app:layout_constraintStart_toStartOf="@id/etPassword"
+        android:textColor="@color/tvTitle"
+        android:textSize="@dimen/tvIngresar"
+        app:layout_constraintStart_toEndOf="@id/tvSalir"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -94,7 +85,7 @@
         android:textAlignment="center"
         android:textColor="@color/tvTitle"
         android:textSize="@dimen/tvIngresar"
-        app:layout_constraintStart_toStartOf="@id/tvEntrar"
+        app:layout_constraintStart_toEndOf="@id/tvSalir"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -107,7 +98,7 @@
         android:textAlignment="center"
         android:textColor="@color/tvTitle"
         android:textSize="@dimen/tvIngresar"
-        app:layout_constraintStart_toStartOf="@id/etPassword"
+        app:layout_constraintStart_toEndOf="@id/tvSalir"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 

@@ -8,10 +8,12 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentLoguinBinding
 import com.example.mimascota.models.AccesResultModel
+import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.models.Screen
 import com.example.mimascota.viewmodel.PetsViewModel
 /*import com.example.mimascota.viewmodel.PetsViewModel*/
@@ -21,6 +23,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoguinFragment : Fragment() {
     var binding: FragmentLoguinBinding? = null
     private val modelUserAccess: PetsViewModel by viewModels()
+
+    val userloguin: MutableLiveData<AccessResultModel> by lazy {
+        MutableLiveData<AccessResultModel>()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +44,8 @@ class LoguinFragment : Fragment() {
         initListener()
         return binding?.root
     }
+
+
 
     private fun initListener() {
 
@@ -62,7 +70,7 @@ class LoguinFragment : Fragment() {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.RegisterFragment)
         }
-        //initLoginObserver()
+        initLoginObserver()
     }
 
     // este es mi callback
@@ -75,14 +83,14 @@ class LoguinFragment : Fragment() {
                 .show()
         }
     }
-/*
+
     private fun initLoginObserver() {
         modelUserAccess.userAccesList.observe(this,userAccess)
     }
 
     fun userAccess(email: String, pasword: String) {
        modelUserAccess.userAcces(email, pasword)
-    }*/
+    }
 
     companion object {
 

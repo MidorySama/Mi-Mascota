@@ -22,7 +22,7 @@ class PetsViewModel @Inject constructor(
         MutableLiveData<UserAccesResult>()
     }
 
-    fun listMascota() {
+    /*fun listMascota() {
         compositeDisposable += userAccessRepository.userAccess()
             .subscribeOn(Schedulers.io())
             .subscribe({ listA ->
@@ -39,7 +39,7 @@ class PetsViewModel @Inject constructor(
                     )
                 )
             })
-    }
+    }*/
 
     override fun onCleared() {
         compositeDisposable.clear()
