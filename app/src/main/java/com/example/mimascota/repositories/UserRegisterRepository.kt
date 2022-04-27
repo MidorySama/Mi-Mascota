@@ -1,7 +1,7 @@
 package com.example.mimascota.repositories
 
 import com.example.mimascota.api.CoreHomeApi
-import com.example.mimascota.models.AccesResultModel
+import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.models.UserAccessResponse
 import io.reactivex.Single
 import javax.inject.Inject
@@ -11,8 +11,8 @@ class UserRegisterRepository @Inject constructor(
 ) {
 
     fun userRegister(email: String, name: String, lastName: String, password: String):
-        Single<AccesResultModel> {
-        return apiService.userRegister(
+        Single<AccessResultModel> {
+        return apiService.useRegister(
             userRegister = UserAccessResponse(
                 email = email,
                 name = name,
@@ -20,6 +20,6 @@ class UserRegisterRepository @Inject constructor(
                 password = password
             )
         )
-            .map { userRegister -> userRegister.toModel() }
+            .map { userRegister -> userRegister.toModel }
     }
 }

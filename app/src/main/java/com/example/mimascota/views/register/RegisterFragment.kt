@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentRegistroBinding
-import com.example.mimascota.models.AccesResultModel
+import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.models.Screen
 import com.example.mimascota.viewmodel.UserRegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -40,8 +40,8 @@ class RegisterFragment : Fragment() {
     }
 
     // Este es mi Callback
-    private val userRegisterResult = Observer<AccesResultModel> { accesResultModel ->
-        if (accesResultModel.code == "0") {
+    private val userRegisterResult = Observer<AccessResultModel> { accessResultModel ->
+        if (accessResultModel.code == "0") {
             Toast.makeText(requireContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()

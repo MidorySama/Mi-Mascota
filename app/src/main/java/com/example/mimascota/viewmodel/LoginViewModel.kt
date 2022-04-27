@@ -18,7 +18,7 @@ class LoginViewModel @Inject constructor(
     // Ayuda a liberar los recursos cuando usamos programacion reactiva
     private val compositeDisposable = CompositeDisposable()
 
-    val userAccess: MutableLiveData<AccessResultModel> by lazy {
+    val accessResultModel: MutableLiveData<AccessResultModel> by lazy {
         MutableLiveData<AccessResultModel>()
     }
 
@@ -29,10 +29,10 @@ class LoginViewModel @Inject constructor(
             .subscribeOn(Schedulers.io())
             .subscribe(
                 { accesResultModel ->
-                    userAccess.postValue(accesResultModel)
+                    accessResultModel.postValue(accesResultModel)
                 },
                 { error ->
-                    userAccess.postValue(
+                    accessResultModel.postValue(
                         AccessResultModel(
                             code = "1",
                             message = "error!",

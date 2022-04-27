@@ -2,7 +2,7 @@ package com.example.mimascota.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mimascota.models.AccesResultModel
+import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.repositories.UserRegisterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
@@ -18,8 +18,8 @@ class UserRegisterViewModel @Inject constructor(
     // libera los recursos al usar programación reactiva
     private val compositeDisposable = CompositeDisposable()
 
-    val userRegisterr: MutableLiveData<AccesResultModel> by lazy {
-        MutableLiveData<AccesResultModel>()
+    val userRegisterr: MutableLiveData<AccessResultModel> by lazy {
+        MutableLiveData<AccessResultModel>()
     }
 
     fun userRegister(email: String, name: String, lastName: String, password: String) {
@@ -31,7 +31,7 @@ class UserRegisterViewModel @Inject constructor(
                 userRegisterr.postValue(accesResultmodel)
             }, {
                 userRegisterr.postValue(
-                    AccesResultModel(
+                    AccessResultModel(
                         code = "-1",
                         message = "error!"
                     )

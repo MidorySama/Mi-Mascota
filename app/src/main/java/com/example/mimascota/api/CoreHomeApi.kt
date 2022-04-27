@@ -19,7 +19,7 @@ interface CoreHomeApi {
 
     @POST("/register_user_pet")
     @Headers("Content-Type: application/json")
-    fun userRegister(@Body userRegister: UserAccessResponse): Single<UserRegisterResponse>
+    fun useRegister(@Body userRegister: UserAccessResponse): Single<UserRegisterResponse>
 
     @POST("/access_pet")
     @Headers("Content-Type: application/json ")
