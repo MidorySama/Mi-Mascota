@@ -49,7 +49,7 @@
         android:layout_width="@dimen/edRegistro"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:hint="Apellido"
+        android:hint="Psseword"
         android:textColorHint="@color/tvTitle"
         app:boxStrokeColor="#FF3700B3"
         app:layout_constraintStart_toEndOf="@id/tvSalir"

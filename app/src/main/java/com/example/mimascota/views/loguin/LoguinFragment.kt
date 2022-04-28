@@ -6,20 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentLoguinBinding
 import com.example.mimascota.models.AccessResultModel
+import com.example.mimascota.models.ListAllPets
 import com.example.mimascota.models.Screen
+import com.example.mimascota.models.UserAccesResult
 import com.example.mimascota.viewmodel.LoginViewModel
+import com.example.mimascota.views.adapter.LoginAdapter
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoguinFragment : Fragment() {
     var binding: FragmentLoguinBinding? = null
     private val loginViewModel: LoginViewModel by viewModels()
+    private val modelUserAcces: LoginViewModel by viewModels()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,8 +69,9 @@ class LoguinFragment : Fragment() {
             (activity as MainActivity)
                 .changeScreenProccess(Screen.RegisterFragment)
         }
-        initLoginObserver()
+       // initLoginObserver()
     }
+
 
     // este es mi callback
     private val userAccessObserver = Observer<AccessResultModel> { accessResultModel ->
@@ -74,6 +83,7 @@ class LoguinFragment : Fragment() {
                 .show()
         }
     }
+
 
     private fun initLoginObserver() {
         loginViewModel.accessResultModel.observe(viewLifecycleOwner, userAccessObserver)

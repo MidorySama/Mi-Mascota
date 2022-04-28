@@ -1,5 +1,6 @@
 package com.example.mimascota.models
 
+import com.example.mimascota.activities.main.UserLogin
 import com.google.gson.annotations.SerializedName
 
 data class UserRegisterResult(

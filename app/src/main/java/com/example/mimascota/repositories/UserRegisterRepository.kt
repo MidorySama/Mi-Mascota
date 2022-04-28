@@ -1,6 +1,7 @@
 package com.example.mimascota.repositories
 
 import com.example.mimascota.api.CoreHomeApi
+import com.example.mimascota.mapping.toModel
 import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.models.UserAccessResponse
 import io.reactivex.Single
@@ -20,6 +21,8 @@ class UserRegisterRepository @Inject constructor(
                 password = password
             )
         )
-            .map { userRegister -> userRegister.toModel }
+            .map { userRegisterResult ->
+                userRegisterResult.toModel()
+            }
     }
 }

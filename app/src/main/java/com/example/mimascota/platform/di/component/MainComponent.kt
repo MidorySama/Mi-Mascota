@@ -10,7 +10,6 @@ import javax.inject.Singleton
     modules = [
         RepositoryModule::class,
         RetrofitModule::class,
-        UserRegisterModule::class
     ]
 )
 interface MainComponent
