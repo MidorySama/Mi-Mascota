@@ -1,6 +1,8 @@
 package com.example.mimascota.api
 
 
+import com.example.mimascota.mapping.AllpetsResponse
+import com.example.mimascota.models.UserAccessResponse
 import com.example.mimascota.models.*
 import io.reactivex.Single
 import retrofit2.http.Body

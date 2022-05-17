@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.mimascota.R
 import com.example.mimascota.databinding.ActivityMainBinding
-import com.example.mimascota.models.Screen
+import com.example.mimascota.activities.screen.Screen
 import com.example.mimascota.viewmodel.LoginViewModel
 import com.example.mimascota.views.invitado.InvitadoFragment
 import com.example.mimascota.views.loguin.LoguinFragment
@@ -81,10 +81,9 @@ class MainActivity : AppCompatActivity() {
             Screen.InvitadoFragment -> {
                 openInvitadoFragment()
             }
-            // Screen.Salir->{finish()}
+             //Screen.Salir->{finish()}
         }
     }
-
 
 
     /* private fun initLoginObserver() {

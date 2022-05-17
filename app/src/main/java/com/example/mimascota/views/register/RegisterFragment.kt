@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentRegistroBinding
 import com.example.mimascota.models.AccessResultModel
-import com.example.mimascota.models.Screen
+import com.example.mimascota.activities.screen.Screen
 import com.example.mimascota.viewmodel.UserRegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

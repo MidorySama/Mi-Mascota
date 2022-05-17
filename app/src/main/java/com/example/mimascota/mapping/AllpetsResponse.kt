@@ -1,5 +1,6 @@
-package com.example.mimascota.models
+package com.example.mimascota.mapping
 
+import com.example.mimascota.models.PetsRequest
 import com.google.gson.annotations.SerializedName
 
 class AllpetsResponse {

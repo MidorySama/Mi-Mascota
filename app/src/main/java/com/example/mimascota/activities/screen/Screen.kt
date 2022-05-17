@@ -1,4 +1,4 @@
-package com.example.mimascota.models
+package com.example.mimascota.activities.screen
 
 enum class Screen(val type: String) {
     LoguinFragment("LoginFragment"),

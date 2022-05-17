@@ -2,12 +2,10 @@ package com.example.mimascota.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mimascota.models.UserAccesResult
+import com.example.mimascota.mapping.UserAccesResult
 import com.example.mimascota.repositories.UserAccessRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.plusAssign
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel

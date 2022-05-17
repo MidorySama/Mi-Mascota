@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentInvitadoBinding
-import com.example.mimascota.models.Screen
+import com.example.mimascota.activities.screen.Screen
 
 
 class InvitadoFragment : Fragment() {

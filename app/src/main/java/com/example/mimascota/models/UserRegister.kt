@@ -1,4 +1,4 @@
-package com.example.mimascota.activities.main
+package com.example.mimascota.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
