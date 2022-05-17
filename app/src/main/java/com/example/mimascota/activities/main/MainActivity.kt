@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.mimascota.R
-import com.example.mimascota.databinding.ActivityMainBinding
 import com.example.mimascota.activities.screen.Screen
+import com.example.mimascota.databinding.ActivityMainBinding
 import com.example.mimascota.viewmodel.LoginViewModel
 import com.example.mimascota.views.invitado.InvitadoFragment
 import com.example.mimascota.views.loguin.LoguinFragment
@@ -20,13 +20,19 @@ class MainActivity : AppCompatActivity() {
     private val modelUserAcces: LoginViewModel by viewModels()
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         changeScreenProccess(Screen.LoguinFragment)
+
+        binding?.tvEntrar?.setOnClickListener{
+
+            userAcces(binding?.edUsuario?.text.toString(),binding?.etPassword?.text.toString())
+        }
+
+
     }
     /*  private var userLoginObserver = Observer<UserAccesResult> { userLogin ->
        if (userLogin.susses) {
@@ -42,18 +48,18 @@ class MainActivity : AppCompatActivity() {
         }
     }*/
 
-  /*  private var onItemClickListener: ((listAll: ListAllPets) -> Unit) = { list ->
-        Toast.makeText(this, "Macota:" + list.name, Toast.LENGTH_SHORT).show()
-        LoginDetBottomSheet.newInstance(
-            list.name,
-            list.type,
-            list.raza,
-            list.obs,
-            list.url_image
-        )
-            .show(supportFragmentManager, "")
-    }
-*/
+    /*  private var onItemClickListener: ((listAll: ListAllPets) -> Unit) = { list ->
+          Toast.makeText(this, "Macota:" + list.name, Toast.LENGTH_SHORT).show()
+          LoginDetBottomSheet.newInstance(
+              list.name,
+              list.type,
+              list.raza,
+              list.obs,
+              list.url_image
+          )
+              .show(supportFragmentManager, "")
+      }
+  */
     /*  private fun initRecycler() {
           val linearLayoutManager = LinearLayoutManager(this)
           binding?.recyclerView?.apply {
@@ -81,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             Screen.InvitadoFragment -> {
                 openInvitadoFragment()
             }
-             //Screen.Salir->{finish()}
+            //Screen.Salir->{finish()}
         }
     }
 
@@ -90,7 +96,7 @@ class MainActivity : AppCompatActivity() {
          modelUserAcces.userAccess.observe(this, userLoginObserver)
      }*/
 
-    fun userAccess(email: String,pasword: String) {
+    fun userAccess(email: String, pasword: String) {
         modelUserAcces.userAccess(email, pasword)
     }
 
