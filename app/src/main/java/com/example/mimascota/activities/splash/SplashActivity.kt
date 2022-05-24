@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mimascota.R
-import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.ActivitySplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 

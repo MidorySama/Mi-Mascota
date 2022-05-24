@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentRegistroBinding
 import com.example.mimascota.models.AccessResultModel
 import com.example.mimascota.activities.screen.Screen

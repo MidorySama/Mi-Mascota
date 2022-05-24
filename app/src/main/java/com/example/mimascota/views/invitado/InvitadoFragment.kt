@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mimascota.activities.main.MainActivity
 import com.example.mimascota.databinding.FragmentInvitadoBinding
 import com.example.mimascota.activities.screen.Screen
 
