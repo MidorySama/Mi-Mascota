@@ -1,4 +1,4 @@
-package com.example.mimascota.activities.login
+package com.example.mimascota.models
 
 import com.google.gson.annotations.SerializedName
 

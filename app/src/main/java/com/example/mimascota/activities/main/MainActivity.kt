@@ -16,6 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    //lateinit var binding: ActivityMainBinding
     var binding: ActivityMainBinding? = null
     private val modelUserAcces: LoginViewModel by viewModels()
 
@@ -110,6 +112,13 @@ class MainActivity : AppCompatActivity() {
 
     fun openInvitadoFragment() {
         changeFragment(InvitadoFragment.newInstance())
+    }
+
+
+
+    fun userAcces(email:String,idUser:String,pasword:String)
+    {
+        modelUserAcces.userAccess(email,pasword)
     }
 
     companion object {
